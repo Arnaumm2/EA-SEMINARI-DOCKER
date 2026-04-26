@@ -1,0 +1,13 @@
+# Dependències
+node_modules/
+
+# Compilacions
+dist/
+build/
+.angular/
+
+# Seguretat (Molt important!)
+*.env
+
+# Docker logs
+*.log
