@@ -1,0 +1,32 @@
+<header class="topbar" *ngIf="authService.isLoggedIn()">
+  <div class="brand">
+    <span class="brand-title">EasyEat</span>
+  </div>
+
+  @if (getUrl() != "/login") {
+  <nav class="nav">
+    <a
+      routerLink="/restaurants"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      Restaurants
+    </a>
+    <a
+      routerLink="/customers"
+      routerLinkActive="active"
+    >
+      Customers
+    </a>
+    <button class="btn-custom btn-danger-outline mt-sm mb-sm" style="margin: 0 0 0 8px;" (click)="logout()">Logout</button>
+  </nav>
+  }
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">
+  <small>Seminari Angular · CRUD</small>
+</footer>

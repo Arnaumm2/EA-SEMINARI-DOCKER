@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Super Admin",
+    "email": "admin@easyeat.com",
+    "password": "Admin123",
+    "role": "admin"
+  }
+]
