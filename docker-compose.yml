@@ -1,7 +1,6 @@
 services:
   backend:
-    build: 
-      context: ./EA-easyeat-backend2
+    image: arnaumm2/easyeat-backend:v0.9.0
     ports:
       - "3000:3000"
     environment:
@@ -11,8 +10,7 @@ services:
       - mongodb
 
   backoffice:
-    build: 
-      context: ./EA-easyeat-backoffice
+    image: arnaumm2/easyeat-backoffice:v0.9.0
     ports:
       - "4000:4000"
     environment:
@@ -23,8 +21,7 @@ services:
       - backend
 
   web-client:
-    build:
-      context: ./EA-EasyEat-ReactWeb
+    image: arnaumm2/easyeat-web:v0.9.0
     ports:
       - "8080:80"
     depends_on:
