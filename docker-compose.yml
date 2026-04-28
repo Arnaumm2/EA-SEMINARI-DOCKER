@@ -2,10 +2,11 @@ services:
   backend:
     image: arnaumm2/easyeat-backend:v0.9.0
     ports:
-      - "3000:3000"
+      - "3000:1337"
     environment:
-      - PORT=3000
+      - PORT=1337
       - MONGO_URI=mongodb://mongodb:27017/easyeat-db
+      - BACKEND_URI=localhost
     depends_on:
       - mongodb
 
@@ -16,7 +17,7 @@ services:
     environment:
       - PORT=4000
       - NODE_ENV=production
-      - API_URL=http://backend:3000
+      - BACKEND_URI=http://backend:3000
     depends_on:
       - backend
 

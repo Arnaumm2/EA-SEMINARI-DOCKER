@@ -2,6 +2,8 @@ import swaggerJSDoc, { Options } from 'swagger-jsdoc';
 import path from 'path';
 import { config } from './config/config';
 
+const host = process.env.BACKEND_URI || "localhost";
+
 const options: Options = {
   definition: {
     openapi: '3.0.0',
@@ -12,7 +14,7 @@ const options: Options = {
     },
     servers: [
       {
-        url: `http://localhost:${config.server.port}`,
+        url: `http://${host}:${config.server.port}`,
       },
     ],
     components: {
