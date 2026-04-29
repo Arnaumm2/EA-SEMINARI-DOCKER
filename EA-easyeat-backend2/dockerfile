@@ -26,6 +26,8 @@ RUN npm install --only=production --ignore-scripts
 # Copiem el build generat
 COPY --from=build /app/build ./build
 
+COPY src/data ./src/data
+
 EXPOSE 3000
 
 CMD ["node", "build/server.js"]
